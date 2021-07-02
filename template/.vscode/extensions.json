@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "hoovercj.vscode-settings-cycler",
+    "qbik.markdown-command-runner-fork",
+    "arcanis.vscode-zipfs",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}

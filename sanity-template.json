@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "title": "Next.js Static Starter",
+  "description": "Starter for deployment on Vercel with Next.js",
+  "previewMedia": {
+    "type": "image",
+    "src": "assets/frontend.png",
+    "alt": "Next.js frontend with Sanity as CMS"
+  },
+  "technologies": [
+    {
+      "id": "vercel",
+      "name": "Vercel",
+      "url": "https://vercel.com/"
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "url": "https://nextjs.org"
+    }
+  ],
+  "deployment": {
+    "provider": "vercel",
+    "studio": { "basePath": "/packages/sanity" },
+    "envVars": {
+      "projectId": ["NEXT_PUBLIC_SANITY_PROJECT_ID"],
+      "dataset": ["NEXT_PUBLIC_SANITY_DATASET"]
+    },
+    "corsOrigins": [
+      {
+        "origin": "http://localhost:*",
+        "allowCredentials": true
+      }
+    ]
+  }
+}

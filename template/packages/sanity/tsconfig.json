@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "baseUrl": "src",
+    "esModuleInterop": true,
+    "paths": { "~/*": ["*"], ">/*": ["../*"] }
+  },
+  "include": ["../../node_modules/@sanity/base/types/**/*.ts", "./**/*.ts", "./**/*.tsx"]
+}

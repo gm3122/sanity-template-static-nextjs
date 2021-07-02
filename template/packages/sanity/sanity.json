@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "project": {
+    "name": "<#< sanity.projectTitle >#>"
+  },
+  "api": {
+    "projectId": "<#< sanity.projectId >#>",
+    "dataset": "<#< sanity.dataset >#>",
+    "apiVersion": "2021-06-04"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/google-maps-input",
+    "@sanity/color-input",
+    "vercel-deploy",
+    "@sanity/dashboard",
+    "order-documents"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["@sanity/vision", "parts-list"]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.ts"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/structure/desk-structure.ts"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "./src/actions/resolve-document-actions.ts"
+    },
+    {
+      "implements": "part:@sanity/default-layout/branding-style",
+      "path": "./src/layout/Branding.css"
+    },
+    {
+      "implements": "part:@sanity/default-layout/tool-switcher",
+      "path": "./src/layout/ToolMenu.tsx"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "module": "commonjs",
+    "noEmit": true,
+    "target": "es5",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "paths": { "#/*": ["src/pages/*"], "C/*": ["src/components/*"], "~/*": ["src/*"], ">/*": ["../../*"] },
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "pretty": true
+  },
+  "exclude": ["./node_modules", "./public", "./.cache"],
+  "include": ["**/*", ".eslintrc.js"]
+}

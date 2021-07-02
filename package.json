@@ -1,0 +1,9 @@
+{
+  "name": "sanity-template-static-nextjs",
+  "scripts": {
+    "build": "sanity-template build --template-values dev/template-values.json"
+  },
+  "devDependencies": {
+    "sanity-template": "2.3.1"
+  }
+}
