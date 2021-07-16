@@ -1,26 +1,19 @@
 # Next Sanity
 
-# Sanity
-
-## Create project
+## Postinstall
 
 ```sh
-sanity init
+vercel link
 ```
-
-Kill when you have "Creating dataset".
-
-Then, you can get the projet id with :
 
 ```sh
-sanity projects list
+vercel env pull packages/next.js/.env.local
+cp packages/next.js/.env.local packages/sanity/.env.development
 ```
 
-Replace projectId in sanity.json and sanity-client.ts.
+## VS Code Extensions
 
-# VS Code Extensions
-
-## Settings Cycler
+### Settings Cycler
 
 keybindings.json
 
