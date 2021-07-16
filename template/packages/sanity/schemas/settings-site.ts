@@ -8,8 +8,6 @@ export default {
       name: 'siteName',
       title: 'Nom du site',
       type: 'string',
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
@@ -17,8 +15,6 @@ export default {
       type: 'text',
       rows: '3',
       description: 'Décrivez votre site web pour les moteurs de recherche et les réseaux sociaux.',
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'keywords',
@@ -29,22 +25,16 @@ export default {
       options: {
         layout: 'tags',
       },
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'author',
       title: 'Auteur du site',
       type: 'string',
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'favicon',
       title: 'Favicon',
       type: 'image',
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'logo',
@@ -55,37 +45,18 @@ export default {
       },
       fields: [
         {
-          name: 'border',
-          title: 'Afficher le sous carré',
-          type: 'boolean',
-          initialValue: true,
-        },
-        {
-          name: 'marginTop',
-          title: 'Marge du haut',
-          type: 'string',
-          description: 'ex: 50vh',
-          codegen: { required: true },
-          validation: (Rule) => Rule.required(),
-        },
-        {
           name: 'width',
           title: 'Taille du logo',
           type: 'number',
           description: 'Taille en pixel',
-          codegen: { required: true },
-          validation: (Rule) => Rule.required(),
         },
       ],
-      validation: (Rule) => Rule.required(),
     },
     {
       name: 'siteUrl',
       title: 'URL du site',
       type: 'url',
       description: "L'adresse racine du site, ex: https://www.google.com/",
-      codegen: { required: true },
-      validation: (Rule) => Rule.required(),
     },
   ],
 }

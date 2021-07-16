@@ -9,15 +9,15 @@ yarn sanity-template check
 ## Build
 
 ```sh
-yarn sanity-template build --template-values dev/template-values.json
+yarn sanity-template build
 ```
 
 ## Watch
 
 ```sh
-yarn sanity-template watch --template-values dev/template-values.json
+yarn sanity-template watch
 ```
 
-# Deploy
+## Deploy
 
-[1 Click Starter](https://sanity.io/create?template=<github-username>/repository-name)
+[1 Click Starter](https://sanity.io/create?template=gm3122/sanity-template-static-nextjs)

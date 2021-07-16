@@ -1,11 +1,9 @@
 {
   "root": true,
   "project": {
-    "name": "<#< sanity.projectTitle >#>"
+    "name": "Studio"
   },
   "api": {
-    "projectId": "<#< sanity.projectId >#>",
-    "dataset": "<#< sanity.dataset >#>",
     "apiVersion": "2021-06-04"
   },
   "plugins": [
