@@ -4,6 +4,8 @@
     "name": "Studio"
   },
   "api": {
+    "projectId": "PULLED_FROM_ENV",
+    "dataset": "PULLED_FROM_ENV",
     "apiVersion": "2021-06-04"
   },
   "plugins": [

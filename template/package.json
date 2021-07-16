@@ -5,7 +5,7 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "husky install",
+    "postinstall": "husky install && vercel link -y && vercel env pull packages/next.js/.env.local && cp packages/next.js/.env.local packages/sanity/.env.development && cp packages/next.js/.env.local packages/sanity/.env.production",
     "type-check": "tsc -b ./packages/next.js/tsconfig.json",
     "lint": "eslint . '.*.js' --fix --ignore-path .gitignore --ignore-pattern packages/next.js --ext .js,.jsx,.ts,.tsx",
     "lint:next": "yarn workspace next.js next lint",
@@ -38,6 +38,7 @@
     "prettier-plugin-packagejson": "^2.2.11",
     "prettier-plugin-sh": "^0.7.1",
     "prettier-plugin-tsconfig": "^0.0.1",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.4",
+    "vercel": "^23.0.1"
   }
 }

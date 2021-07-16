@@ -93,5 +93,8 @@ yarn-error.log
 # Typescript
 tsconfig.tsbuildinfo
 
-# nextjs
+# Next.js
 .next
+
+# Vercel
+.vercel
