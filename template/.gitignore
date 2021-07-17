@@ -98,3 +98,7 @@ tsconfig.tsbuildinfo
 
 # Vercel
 .vercel
+
+# Env
+.env.local
+.env.development
