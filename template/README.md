@@ -17,6 +17,16 @@ cp packages/next.js/.env.local packages/sanity/.env.development
 
 Change "Framework Preset" to Next.js under Settings / Build & Development Settings
 
+## Vercel Deployments from Sanity
+
+Display Title: Production
+
+Vercel Project Name: next-js-static-starter-testing
+
+Deploy Hook URL: (Settings / Git / Deploy Hooks) Title, branch
+
+Vercel Token: (Settings 'Global' / Token)
+
 ## VS Code Extensions
 
 ### Settings Cycler
