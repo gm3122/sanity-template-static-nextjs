@@ -1,19 +1,19 @@
 import _ from 'lodash'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { createMuiTheme, Theme, ThemeOptions, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
+import { createTheme, Theme, ThemeOptions, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
 
-import { getTheme, palette as base_palette } from '~/theme'
+import { getThemeOptions, palette as base_palette } from '~/theme'
 
-export const getMuiTheme = (themeOptions?: ThemeOptions): Theme => {
+export const getTheme = (themeOptions?: ThemeOptions): Theme => {
   const palette = _.cloneDeep(base_palette)
   _.merge(palette, themeOptions?.palette)
 
-  const theme = createMuiTheme({ palette })
+  const theme = createTheme({ palette })
 
-  return createMuiTheme({
+  return createTheme({
     ...theme,
-    ...getTheme(theme),
+    ...getThemeOptions(theme),
   })
 }
 
@@ -25,7 +25,7 @@ interface Props {
 export default function ThemeProvider(props: Props): JSX.Element {
   const { children, themeOptions } = props
 
-  return <MuiThemeProvider theme={getMuiTheme(themeOptions)}>{children}</MuiThemeProvider>
+  return <MuiThemeProvider theme={getTheme(themeOptions)}>{children}</MuiThemeProvider>
 }
 
 export function RootThemeProvider(props: Props): JSX.Element {

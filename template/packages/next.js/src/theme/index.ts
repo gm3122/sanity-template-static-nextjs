@@ -9,7 +9,7 @@ export const palette = {
   primary: { main: '#5469d4' },
 }
 
-export const getTheme = ({ palette }: Theme): ThemeOptions => ({
+export const getThemeOptions = ({ palette }: Theme): ThemeOptions => ({
   overrides: {
     MuiBackdrop: {
       root: {

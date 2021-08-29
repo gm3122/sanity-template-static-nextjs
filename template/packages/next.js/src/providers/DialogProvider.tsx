@@ -51,7 +51,7 @@ export default function DialogProvider(props: DialogProviderProps) {
       }}
     >
       {props.children}
-      <Dialog fullScreen fullWidth PaperComponent={PaperComponent} onEscapeKeyDown={closeDialog} open={open}>
+      <Dialog fullScreen fullWidth PaperComponent={PaperComponent} onClose={closeDialog} open={open}>
         {children}
       </Dialog>
     </DialogContext.Provider>
