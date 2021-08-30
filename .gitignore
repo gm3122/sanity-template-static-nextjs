@@ -3,3 +3,6 @@
 
 # Dolphin
 .directory
+
+# Yarn
+template/yarn.lock
