@@ -28,16 +28,18 @@
             "**/*.lock": true,
             "**/node_modules": true,
             "**/public": true,
+            "**/build": true,
             "**/__mocks__": true,
-            "jest*.js": true,
-            "loadershim.js": true,
-            "[dD]ocker*": true,
-            "Makefile": true,
-            "netlify.toml": true,
-            "lint-staged*": true,
+            "**/babel*.js": true,
+            "**/jest*.js": true,
+            "**/loadershim.js": true,
+            "**/[dD]ocker*": true,
+            "**/Makefile": true,
+            "**/netlify.toml": true,
+            "**/lint-staged*": true,
             "**/tsconfig.tsbuildinfo": true,
-            "lighthouserc.js": true,
-            "vercel.json": true
+            "**/lighthouserc.js": true,
+            "**/vercel.json": true
           }
         }
       ]

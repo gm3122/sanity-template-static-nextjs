@@ -12,11 +12,14 @@
     "lint-fix": "concurrently 'yarn lint --fix' 'yarn lint:next --fix'",
     "format": "prettier . '.husky/**/*' --write --ignore-path .gitignore",
     "start": "concurrently 'yarn workspace sanity dev' 'yarn workspace next.js dev' 'yarn workspace sanity start'",
-    "build": "concurrently 'yarn workspace sanity codegen' 'yarn workspace next.js build' 'yarn workspace sanity build'"
+    "build": "concurrently 'yarn workspace sanity codegen' 'yarn workspace next.js build' 'yarn workspace sanity build'",
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
+    "babel-jest": "^27.1.0",
     "concurrently": "^6.2.0",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
@@ -38,6 +41,7 @@
     "prettier-plugin-packagejson": "^2.2.11",
     "prettier-plugin-sh": "^0.7.1",
     "prettier-plugin-tsconfig": "^0.0.1",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.3.4",
     "vercel": "^23.0.1"
   }
