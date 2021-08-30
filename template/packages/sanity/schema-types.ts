@@ -10,6 +10,11 @@ import type {
   SanityImageCrop,
   SanityImageHotspot,
   SanityKeyed,
+  SanityImageAsset,
+  SanityImageMetadata,
+  SanityImageDimensions,
+  SanityImagePalette,
+  SanityImagePaletteSwatch,
 } from 'sanity-codegen'
 
 export type {
@@ -24,6 +29,11 @@ export type {
   SanityImageCrop,
   SanityImageHotspot,
   SanityKeyed,
+  SanityImageAsset,
+  SanityImageMetadata,
+  SanityImageDimensions,
+  SanityImagePalette,
+  SanityImagePaletteSwatch,
 }
 
 /**
@@ -39,35 +49,40 @@ export interface SiteSettings extends SanityDocument {
    *
    *
    */
-  siteName: string
+  siteName?: string
 
   /**
    * Description — `text`
    *
    * Décrivez votre site web pour les moteurs de recherche et les réseaux sociaux.
    */
-  description: string
+  description?: string
 
   /**
    * Mots clés — `array`
    *
    * Ajoutez des mots-clés pour les moteurs de recherche qui décrivent votre site Web.
    */
-  keywords: Array<SanityKeyed<string>>
+  keywords?: Array<SanityKeyed<string>>
 
   /**
    * Auteur du site — `string`
    *
    *
    */
-  author: string
+  author?: string
 
   /**
    * Favicon — `image`
    *
    *
    */
-  favicon: { _type: 'image'; asset: SanityAsset; crop?: SanityImageCrop; hotspot?: SanityImageHotspot }
+  favicon?: {
+    _type: 'image'
+    asset: SanityReference<SanityImageAsset>
+    crop?: SanityImageCrop
+    hotspot?: SanityImageHotspot
+  }
 
   /**
    * Logo — `image`
@@ -76,30 +91,16 @@ export interface SiteSettings extends SanityDocument {
    */
   logo?: {
     _type: 'image'
-    asset: SanityAsset
+    asset: SanityReference<SanityImageAsset>
     crop?: SanityImageCrop
     hotspot?: SanityImageHotspot
-
-    /**
-     * Afficher le sous carré — `boolean`
-     *
-     *
-     */
-    border?: boolean
-
-    /**
-     * Marge du haut — `string`
-     *
-     * ex: 50vh
-     */
-    marginTop: string
 
     /**
      * Taille du logo — `number`
      *
      * Taille en pixel
      */
-    width: number
+    width?: number
   }
 
   /**
@@ -107,7 +108,7 @@ export interface SiteSettings extends SanityDocument {
    *
    * L'adresse racine du site, ex: https://www.google.com/
    */
-  siteUrl: string
+  siteUrl?: string
 }
 
 /**

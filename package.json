@@ -3,9 +3,11 @@
   "scripts": {
     "build": "sanity-template build --template-values dev/values.json",
     "watch": "sanity-template watch --template-values dev/values.json",
-    "start": "cd build && yarn start"
+    "start": "cd build && yarn start",
+    "update": "cd template && ncu -u --deep"
   },
   "devDependencies": {
+    "npm-check-updates": "^11.8.3",
     "sanity-template": "2.3.1"
   }
 }
