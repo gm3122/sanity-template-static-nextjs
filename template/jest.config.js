@@ -4,4 +4,6 @@ module.exports = {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
+  coveragePathIgnorePatterns: ['/node_modules/', '.stories.tsx'],
 }

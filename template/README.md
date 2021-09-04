@@ -27,6 +27,14 @@ Deploy Hook URL: (Settings / Git / Deploy Hooks) Title, branch
 
 Vercel Token: (Settings 'Global' / Token)
 
+## Jest
+
+Updating Snapshots
+
+```sh
+yarn jest --env=jsdom --updateSnapshot
+```
+
 ## VS Code Extensions
 
 ### Settings Cycler
