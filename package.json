@@ -7,7 +7,7 @@
     "update": "cd template && ncu -u --deep"
   },
   "devDependencies": {
-    "npm-check-updates": "^11.8.3",
+    "npm-check-updates": "^11.8.5",
     "sanity-template": "2.3.1"
   }
 }
