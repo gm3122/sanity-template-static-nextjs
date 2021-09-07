@@ -13,13 +13,16 @@ const [prettierSupportedFilenames, prettierSupportedExtensions] = prettierLangua
 
 const addQuotes = (a) => `"${a}"`
 
-module.exports = (allStagedFiles) => {
-  const prettierFiles = micromatch(allStagedFiles, [
-    ...prettierSupportedFilenames.map((filename) => `**/${filename}`),
-    ...prettierSupportedExtensions.map((extension) => `**/*${extension}`),
-    '**/.husky/*',
-  ])
-  const prettiers = prettierFiles.length > 0 ? [`prettier --write ${prettierFiles.map(addQuotes).join(' ')}`] : []
+module.exports = {
+  '**/*': (filenames) => {
+    const prettierFiles = micromatch(filenames, [
+      ...prettierSupportedFilenames.map((filename) => `**/${filename}`),
+      ...prettierSupportedExtensions.map((extension) => `**/*${extension}`),
+      '**/.husky/*',
+    ])
+    const prettiers = prettierFiles.length > 0 ? [`prettier --write ${prettierFiles.map(addQuotes).join(' ')}`] : []
 
-  return prettiers
+    return prettiers
+  },
+  '**/package.json': 'sort-package-json',
 }
