@@ -14,7 +14,7 @@ const [prettierSupportedFilenames, prettierSupportedExtensions] = prettierLangua
 const addQuotes = (a) => `"${a}"`
 
 module.exports = {
-  '**/*': (filenames) => {
+  '**/!(.env.*)': (filenames) => {
     const prettierFiles = micromatch(filenames, [
       ...prettierSupportedFilenames.map((filename) => `**/${filename}`),
       ...prettierSupportedExtensions.map((extension) => `**/*${extension}`),
@@ -24,5 +24,7 @@ module.exports = {
 
     return prettiers
   },
+  '**/.env.*': (filenames) =>
+    filenames.length > 0 ? [`prettier --write ${filenames.map(addQuotes).join(' ')} --parser sh`] : [],
   '**/package.json': 'sort-package-json',
 }
