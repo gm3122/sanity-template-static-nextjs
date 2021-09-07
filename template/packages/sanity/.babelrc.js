@@ -10,6 +10,12 @@ module.exports = {
         },
       },
     ],
+    [
+      '@babel/plugin-transform-react-jsx',
+      {
+        runtime: 'automatic',
+      },
+    ],
   ],
   presets: [
     [
@@ -21,11 +27,5 @@ module.exports = {
       },
     ],
     '@babel/preset-typescript',
-    [
-      '@babel/preset-react',
-      {
-        runtime: 'automatic',
-      },
-    ],
   ],
 }

@@ -1,10 +1,9 @@
-import React from 'react'
 import StateButton from 'part:@sanity/components/buttons/state'
 import { Tooltip } from 'part:@sanity/components/tooltip'
 
+import { LegacyLayerProvider } from '@sanity/base/components'
 import styles from '@sanity/default-layout/lib/navbar/toolMenu/ToolMenu.css'
 import { Router, Tool } from '@sanity/default-layout/lib/types'
-import { LayerProvider } from '@sanity/ui'
 
 interface Props {
   activeToolName: string
@@ -27,14 +26,14 @@ function ToolMenu(props: Props) {
   return (
     <ul className={styles.root} data-direction={direction} data-tone="navbar">
       {tools
-        // .filter((tool) => tool.name !== 'dashboard')
+        .filter((tool) => tool.name !== 'dashboard')
         .map((tool) => {
           const title = tool.title || tool.name || undefined
           const tooltipContent = <span className={styles.tooltipContent}>{title}</span>
 
           return (
             <li key={tool.name}>
-              <LayerProvider>
+              <LegacyLayerProvider zOffset="navbarPopover">
                 <Tooltip
                   content={tooltipContent as any}
                   disabled={showLabel}
@@ -59,7 +58,7 @@ function ToolMenu(props: Props) {
                     </StateButton>
                   </div>
                 </Tooltip>
-              </LayerProvider>
+              </LegacyLayerProvider>
             </li>
           )
         })}

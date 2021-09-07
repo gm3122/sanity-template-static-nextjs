@@ -1,6 +1,7 @@
 {
   "files.exclude": {
-    "**/.git": true
+    "**/.git": true,
+    "**/.directory": true
   },
   "search.exclude": {
     "**/.cache": true,
@@ -21,7 +22,8 @@
       "values": [
         {
           "files.exclude": {
-            "**/.git": true
+            "**/.git": true,
+            "**/.directory": true
           }
         },
         {

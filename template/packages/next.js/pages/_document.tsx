@@ -12,7 +12,11 @@ class MyDocument extends Document<{ helmet: HelmetData }> {
 
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
+        enhanceApp: (App) =>
+          // eslint-disable-next-line react/display-name
+          function (props) {
+            return sheets.collect(<App {...props} />)
+          },
       })
 
     const documentProps = await Document.getInitialProps(ctx)
