@@ -3,7 +3,7 @@
 const withTM = require('next-transpile-modules')(['sanity'])
 
 /**
- * @type {import('next/dist/next-server/server/config').NextConfig}
+ * @type {Partial<import('next/dist/server/config').NextConfig>}
  **/
 const nextConfig = {
   distDir: '../../.next',
@@ -16,8 +16,6 @@ const nextConfig = {
       },
     ]
   },
-  experimental: {}, // needed for ts-check
-  future: {}, // needed for ts-check
 }
 
 module.exports = withTM(nextConfig)
