@@ -1,5 +1,5 @@
 {
-  "name": "carre-films",
+  "name": "<#< repository.name >#>",
   "private": true,
   "workspaces": [
     "packages/*"
