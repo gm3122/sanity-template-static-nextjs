@@ -1,4 +1,4 @@
-# Next Sanity
+# <#< repository.name >#>
 
 ## Postinstall
 
@@ -33,6 +33,12 @@ Updating Snapshots
 
 ```sh
 yarn jest --env=jsdom --updateSnapshot
+```
+
+## Clean Vercel Deployments
+
+```sh
+yarn vercel remove <#< repository.name >#> --safe --yes
 ```
 
 ## VS Code Extensions
