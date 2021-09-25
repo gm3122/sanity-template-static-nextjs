@@ -17,7 +17,16 @@ cp packages/next.js/.env.local packages/sanity/.env.development
 
 Change "Framework Preset" to Next.js under Settings / Build & Development Settings
 
+## Sanity
+
+Check Sanity CORS origins if you cannot login: <http://localhost:*> with credentials allowed.
+
+[https://<#< repository.name >#>-lac.vercel.app]
+[https://<#< repository.name >#>-*-gm3122.vercel.app]
+
 ## Vercel Deployments from Sanity
+
+Under <http://localhost:3000/admin/vercel-deploy>, set
 
 Display Title: Production
 

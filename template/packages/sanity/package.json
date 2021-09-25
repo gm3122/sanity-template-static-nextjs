@@ -28,7 +28,8 @@
     "react-use": "^17.3.1",
     "sanity-plugin-order-documents": "^0.0.20",
     "sanity-plugin-parts-list": "^1.0.2",
-    "sanity-plugin-vercel-deploy": "^2.0.1"
+    "sanity-plugin-vercel-deploy": "^2.0.1",
+    "styled-components": "^5.3.1"
   },
   "devDependencies": {
     "@sanity/cli": "^2.18.0",
