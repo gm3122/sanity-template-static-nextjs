@@ -3,7 +3,7 @@ import type { DocumentContext } from 'next/document'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { Helmet, HelmetData } from 'react-helmet'
 
-import { ServerStyleSheets } from '@material-ui/core/styles'
+import ServerStyleSheets from '@mui/styles/ServerStyleSheets'
 
 class MyDocument extends Document<{ helmet: HelmetData }> {
   static async getInitialProps(ctx: DocumentContext) {

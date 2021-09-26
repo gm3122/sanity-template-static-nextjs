@@ -1,7 +1,13 @@
 import _ from 'lodash'
 
-import CssBaseline from '@material-ui/core/CssBaseline'
-import { createTheme, Theme, ThemeOptions, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import {
+  createTheme,
+  StyledEngineProvider,
+  Theme,
+  ThemeOptions,
+  ThemeProvider as MuiThemeProvider,
+} from '@mui/material/styles'
 
 import { getThemeOptions, palette as base_palette } from '~/theme'
 
@@ -25,7 +31,11 @@ interface Props {
 export default function ThemeProvider(props: Props): JSX.Element {
   const { children, themeOptions } = props
 
-  return <MuiThemeProvider theme={getTheme(themeOptions)}>{children}</MuiThemeProvider>
+  return (
+    <StyledEngineProvider injectFirst>
+      <MuiThemeProvider theme={getTheme(themeOptions)}>{children}</MuiThemeProvider>
+    </StyledEngineProvider>
+  )
 }
 
 export function RootThemeProvider(props: Props): JSX.Element {

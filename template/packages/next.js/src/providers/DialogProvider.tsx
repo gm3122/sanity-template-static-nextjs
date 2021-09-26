@@ -2,8 +2,8 @@ import { cloneElement, createContext, useCallback, useContext, useMemo, useState
 import { useRouter } from 'next/router'
 import { useHistory } from 'pages/_app'
 
-import { PaperProps } from '@material-ui/core'
-import Dialog from '@material-ui/core/Dialog'
+import { PaperProps } from '@mui/material'
+import Dialog from '@mui/material/Dialog'
 
 type ContentType = JSX.Element | null
 

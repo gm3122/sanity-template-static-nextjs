@@ -5,7 +5,7 @@ import { getSiteSettings, getThemeSettings } from 'sanity'
 import SEO from 'core/SEO'
 import type { StaticPropsReturnType } from 'types/page'
 
-import CssBaseline from '@material-ui/core/CssBaseline'
+import CssBaseline from '@mui/material/CssBaseline'
 
 import AllProviders from '~/providers/AllProviders'
 import Layout from '~/templates/Layout'

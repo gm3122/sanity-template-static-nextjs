@@ -8,13 +8,16 @@
     "start": "next start"
   },
   "dependencies": {
-    "@material-ui/core": "^4.12.3",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.1",
+    "@mui/styles": "^5.0.1",
     "@sanity/block-content-to-react": "^3.0.0",
     "clsx": "^1.1.1",
     "color": "^4.0.1",
     "lodash": "^4.17.21",
     "next": "^11.1.2",
-    "next-sanity-image": "^3.1.5",
+    "next-sanity-image": "^3.1.6",
     "prop-types": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

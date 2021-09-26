@@ -16,6 +16,9 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    jest: {
+      version: 27,
+    },
   },
   globals: {
     Atomics: 'readonly',

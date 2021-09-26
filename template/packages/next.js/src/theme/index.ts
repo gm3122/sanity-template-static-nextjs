@@ -1,28 +1,30 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ThemeSettings } from 'sanity'
 import color from 'color'
 
-import { Theme, ThemeOptions } from '@material-ui/core/styles'
-import { PaletteOptions } from '@material-ui/core/styles/createPalette'
+import { PaletteOptions, Theme, ThemeOptions } from '@mui/material/styles'
 
 export const palette = {
   primary: { main: '#5469d4' },
 }
 
 export const getThemeOptions = ({ palette }: Theme): ThemeOptions => ({
-  overrides: {
+  components: {
     MuiBackdrop: {
-      root: {
-        backgroundColor: palette.background.paper,
+      styleOverrides: {
+        root: {
+          backgroundColor: palette.background.paper,
+        },
       },
     },
     MuiButton: {
-      root: {
-        textTransform: 'inherit',
+      styleOverrides: {
+        root: {
+          textTransform: 'inherit',
+        },
       },
     },
     MuiCssBaseline: {
-      '@global': {
+      styleOverrides: {
         a: {
           '&:hover': { textDecoration: 'none' },
           color: palette.primary.main,
@@ -35,14 +37,18 @@ export const getThemeOptions = ({ palette }: Theme): ThemeOptions => ({
       },
     },
     MuiDialog: {
-      root: {
-        backgroundColor: 'none',
+      styleOverrides: {
+        root: {
+          backgroundColor: 'none',
+        },
       },
     },
     MuiLink: {
-      underlineHover: {
-        '&:hover': {
-          textDecoration: 'none',
+      styleOverrides: {
+        underlineHover: {
+          '&:hover': {
+            textDecoration: 'none',
+          },
         },
       },
     },

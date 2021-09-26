@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import type { UrlObject } from 'url'
 
-import MuiLink from '@material-ui/core/Link'
-import type { TypographyProps } from '@material-ui/core/Typography'
+import MuiLink from '@mui/material/Link'
+import type { TypographyProps } from '@mui/material/Typography'
 
 declare type Url = string | UrlObject
 interface NextComposedProps {

@@ -1,4 +1,4 @@
-// declare module '@material-ui/core/styles/createPalette' {
+// declare module '@mui/material/styles/createPalette' {
 //   export interface PaletteOptions {
 //     background: {
 //       main: string
