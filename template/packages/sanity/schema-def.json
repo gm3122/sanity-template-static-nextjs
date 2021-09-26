@@ -1,0 +1,336 @@
+{
+  "type": "SchemaRoot",
+  "documents": [
+    {
+      "codegen": {
+        "required": false
+      },
+      "description": null,
+      "hidden": false,
+      "readOnly": false,
+      "hasValidation": false,
+      "name": "siteSettings",
+      "title": "Paramètres du site",
+      "type": "Document",
+      "fields": [
+        {
+          "name": "siteName",
+          "title": "Nom du site",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": null,
+            "hidden": false,
+            "name": "siteName",
+            "readOnly": false,
+            "title": "Nom du site",
+            "hasValidation": false,
+            "type": "String",
+            "list": null
+          }
+        },
+        {
+          "name": "description",
+          "title": "Description",
+          "description": "Décrivez votre site web pour les moteurs de recherche et les réseaux sociaux.",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": "Décrivez votre site web pour les moteurs de recherche et les réseaux sociaux.",
+            "hidden": false,
+            "name": "description",
+            "readOnly": false,
+            "title": "Description",
+            "hasValidation": false,
+            "type": "Text"
+          }
+        },
+        {
+          "name": "keywords",
+          "title": "Mots clés",
+          "description": "Ajoutez des mots-clés pour les moteurs de recherche qui décrivent votre site Web.",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": "Ajoutez des mots-clés pour les moteurs de recherche qui décrivent votre site Web.",
+            "hidden": false,
+            "name": "keywords",
+            "readOnly": false,
+            "title": "Mots clés",
+            "hasValidation": false,
+            "type": "Array",
+            "of": [
+              {
+                "codegen": {
+                  "required": false
+                },
+                "description": null,
+                "hidden": false,
+                "name": null,
+                "readOnly": false,
+                "title": null,
+                "hasValidation": false,
+                "type": "String",
+                "list": null
+              }
+            ],
+            "list": null
+          }
+        },
+        {
+          "name": "author",
+          "title": "Auteur du site",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": null,
+            "hidden": false,
+            "name": "author",
+            "readOnly": false,
+            "title": "Auteur du site",
+            "hasValidation": false,
+            "type": "String",
+            "list": null
+          }
+        },
+        {
+          "name": "favicon",
+          "title": "Favicon",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": null,
+            "hidden": false,
+            "name": "favicon",
+            "readOnly": false,
+            "title": "Favicon",
+            "hasValidation": false,
+            "type": "Image",
+            "fields": null
+          }
+        },
+        {
+          "name": "logo",
+          "title": "Logo",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": null,
+            "hidden": false,
+            "name": "logo",
+            "readOnly": false,
+            "title": "Logo",
+            "hasValidation": false,
+            "type": "Image",
+            "fields": [
+              {
+                "name": "width",
+                "title": "Taille du logo",
+                "description": "Taille en pixel",
+                "hidden": false,
+                "readOnly": false,
+                "codegen": {
+                  "required": false
+                },
+                "hasValidation": false,
+                "definition": {
+                  "codegen": {
+                    "required": false
+                  },
+                  "description": "Taille en pixel",
+                  "hidden": false,
+                  "name": "width",
+                  "readOnly": false,
+                  "title": "Taille du logo",
+                  "hasValidation": false,
+                  "type": "Number",
+                  "list": null
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "siteUrl",
+          "title": "URL du site",
+          "description": "L'adresse racine du site, ex: https://www.google.com/",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": false
+          },
+          "hasValidation": false,
+          "definition": {
+            "codegen": {
+              "required": false
+            },
+            "description": "L'adresse racine du site, ex: https://www.google.com/",
+            "hidden": false,
+            "name": "siteUrl",
+            "readOnly": false,
+            "title": "URL du site",
+            "hasValidation": false,
+            "type": "Url"
+          }
+        }
+      ]
+    },
+    {
+      "codegen": {
+        "required": false
+      },
+      "description": null,
+      "hidden": false,
+      "readOnly": false,
+      "hasValidation": false,
+      "name": "themeSettings",
+      "title": "Paramètres du thème",
+      "type": "Document",
+      "fields": [
+        {
+          "name": "primaryColor",
+          "title": "Couleur principale",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": true
+          },
+          "hasValidation": true,
+          "definition": {
+            "codegen": {
+              "required": true
+            },
+            "description": null,
+            "hidden": false,
+            "name": "primaryColor",
+            "readOnly": false,
+            "title": "Couleur principale",
+            "hasValidation": true,
+            "type": "RegistryReference",
+            "to": "color"
+          }
+        },
+        {
+          "name": "secondaryColor",
+          "title": "Couleur secondaire",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": true
+          },
+          "hasValidation": true,
+          "definition": {
+            "codegen": {
+              "required": true
+            },
+            "description": null,
+            "hidden": false,
+            "name": "secondaryColor",
+            "readOnly": false,
+            "title": "Couleur secondaire",
+            "hasValidation": true,
+            "type": "RegistryReference",
+            "to": "color"
+          }
+        },
+        {
+          "name": "backgroundColor",
+          "title": "Couleur d'arrière-plan",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": true
+          },
+          "hasValidation": true,
+          "definition": {
+            "codegen": {
+              "required": true
+            },
+            "description": null,
+            "hidden": false,
+            "name": "backgroundColor",
+            "readOnly": false,
+            "title": "Couleur d'arrière-plan",
+            "hasValidation": true,
+            "type": "RegistryReference",
+            "to": "color"
+          }
+        },
+        {
+          "name": "backdropColor",
+          "title": "Couleur d'arrière-plan de la boîte de dialogue",
+          "description": "",
+          "hidden": false,
+          "readOnly": false,
+          "codegen": {
+            "required": true
+          },
+          "hasValidation": true,
+          "definition": {
+            "codegen": {
+              "required": true
+            },
+            "description": null,
+            "hidden": false,
+            "name": "backdropColor",
+            "readOnly": false,
+            "title": "Couleur d'arrière-plan de la boîte de dialogue",
+            "hasValidation": true,
+            "type": "RegistryReference",
+            "to": "color"
+          }
+        }
+      ]
+    }
+  ],
+  "registeredTypes": []
+}
