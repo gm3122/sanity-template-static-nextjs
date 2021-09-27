@@ -38,6 +38,10 @@ Deploy Hook URL: (Settings / Git / Deploy Hooks) Title, branch
 
 Vercel Token: (Settings 'Global' / Token)
 
+## (Optionnal) Deploy storybook on vercel
+
+Build command: yarn build-storybook
+
 ## Jest
 
 Updating Snapshots

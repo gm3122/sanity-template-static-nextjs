@@ -102,3 +102,6 @@ tsconfig.tsbuildinfo
 # Env
 .env.local
 .env.development
+
+# Storybook
+storybook-static
