@@ -17,10 +17,10 @@ const nextConfig = {
     ]
   },
   typescript: {
-    ignoreBuildErrors: process.env.NODE_ENV === 'production',
+    ignoreBuildErrors: process.env.NODE_ENV !== 'development',
   },
   eslint: {
-    ignoreDuringBuilds: process.env.NODE_ENV === 'production',
+    ignoreDuringBuilds: process.env.NODE_ENV !== 'development',
   },
 }
 

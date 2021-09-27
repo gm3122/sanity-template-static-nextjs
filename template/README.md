@@ -23,7 +23,7 @@ Override install command to "yarn install --production"
 
 Check Sanity CORS origins if you cannot login: <http://localhost:*> with credentials allowed.
 
-[https://<#< repository.name >#>-lac.vercel.app]
+[https://<#< repository.name >#>.vercel.app]
 [https://<#< repository.name >#>-*-gm3122.vercel.app]
 
 ## Vercel Deployments from Sanity
