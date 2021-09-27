@@ -17,6 +17,8 @@ cp packages/next.js/.env.local packages/sanity/.env.development
 
 Change "Framework Preset" to Next.js under Settings / Build & Development Settings
 
+Override install command to "yarn install --production"
+
 ## Sanity
 
 Check Sanity CORS origins if you cannot login: <http://localhost:*> with credentials allowed.
