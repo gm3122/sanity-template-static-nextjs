@@ -1,0 +1,60 @@
+export default {
+  name: 'color',
+  title: 'Color',
+  type: 'document',
+  fields: [
+    {
+      name: 'hex',
+      title: 'hex',
+      type: 'string',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'alpha',
+      title: 'alpha',
+      type: 'number',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'hslaColor',
+      title: 'hsl',
+      type: 'object',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
+      fields: [
+        { name: 'h', title: 'h', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 's', title: 's', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'l', title: 'l', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'a', title: 'a', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+      ],
+    },
+    {
+      name: 'hsvaColor',
+      title: 'hsva',
+      type: 'object',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
+      fields: [
+        { name: 'h', title: 'h', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 's', title: 's', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'v', title: 'v', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'a', title: 'a', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+      ],
+    },
+    {
+      name: 'rgbaColor',
+      title: 'rgba',
+      type: 'object',
+      codegen: { required: true },
+      validation: (Rule) => Rule.required(),
+      fields: [
+        { name: 'r', title: 'r', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'g', title: 'g', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'b', title: 'b', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+        { name: 'a', title: 'a', type: 'number', codegen: { required: true }, validation: (Rule) => Rule.required() },
+      ],
+    },
+  ],
+}

@@ -1,7 +1,7 @@
 import { SanityCodegenConfig } from 'sanity-codegen'
 
 const config: SanityCodegenConfig = {
-  schemaPath: 'schemas/schema.ts',
+  schemaPath: 'schemas/codegen/sanity-codegen.schema.ts',
   outputPath: 'schema-types.ts',
   prettierResolveConfigPath: '../../.prettierrc.js',
   babelOptions: {
