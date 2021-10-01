@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "noEmit": true,
+    "strictNullChecks": true,
     "baseUrl": "src",
     "esModuleInterop": true,
     "paths": { "~/*": ["*"], ">/*": ["../*"] }

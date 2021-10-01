@@ -1,10 +1,10 @@
 import { createContext, useContext } from 'react'
-import { AppContext } from 'next/app'
+import { GetStaticPropsContext } from 'next'
 import type { StaticPropsReturnType } from 'types/page'
 
 import Homepage from '#/Homepage'
 
-export const getStaticProps = async (_context: AppContext) => {
+export const getStaticProps = async (_context: GetStaticPropsContext) => {
   return {
     props: {},
   }
