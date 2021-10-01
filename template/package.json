@@ -5,18 +5,18 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
-    "type-check": "tsc -b ./packages/next.js/tsconfig.json",
-    "lint": "eslint . '.*.js' --fix --ignore-path .gitignore --ignore-pattern packages/next.js --ext .js,.jsx,.ts,.tsx",
-    "lint:next": "yarn workspace next.js next lint",
-    "lint-fix": "concurrently 'yarn lint --fix' 'yarn lint:next --fix'",
-    "format": "prettier . '.husky/**/*' --write --ignore-path .gitignore",
-    "start": "concurrently 'yarn workspace sanity dev' 'yarn workspace next.js dev' 'yarn workspace sanity start'",
     "build": "concurrently 'yarn workspace next.js build' 'yarn workspace sanity build'",
+    "build-storybook": "build-storybook -o public",
+    "format": "prettier . '.husky/**/*' --write --ignore-path .gitignore",
+    "lint": "eslint . '.*.js' --fix --ignore-path .gitignore --ignore-pattern packages/next.js --ext .js,.jsx,.ts,.tsx",
+    "lint-fix": "concurrently 'yarn lint --fix' 'yarn lint:next --fix'",
+    "lint:next": "yarn workspace next.js next lint",
+    "prepare": "husky install",
+    "start": "concurrently 'yarn workspace sanity dev' 'yarn workspace next.js dev' 'yarn workspace sanity start'",
+    "storybook": "BROWSER=google-chrome start-storybook -p 6006",
     "test": "jest --env=jsdom",
     "test:coverage": "jest --env=jsdom --coverage",
-    "build-storybook": "build-storybook -o public",
-    "storybook": "BROWSER=google-chrome start-storybook -p 6006"
+    "type-check": "tsc -b ./packages/next.js/tsconfig.json"
   },
   "dependencies": {
     "concurrently": "^6.2.1",

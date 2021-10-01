@@ -1,11 +1,11 @@
 {
   "name": "sanity-template-static-nextjs",
   "scripts": {
-    "clean": "rm -rf template/.next template/yarn.lock",
     "build": "yarn clean && sanity-template build --template-values dev/values.json",
-    "watch": "yarn clean && sanity-template watch --template-values dev/values.json",
+    "clean": "rm -rf template/.next template/yarn.lock",
     "start": "cd build && yarn start",
-    "update": "cd template && ncu -u --deep"
+    "update": "cd template && ncu -u --deep",
+    "watch": "yarn clean && sanity-template watch --template-values dev/values.json"
   },
   "devDependencies": {
     "npm-check-updates": "^11.8.5",
