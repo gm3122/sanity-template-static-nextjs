@@ -18,12 +18,11 @@
     "@sanity/google-maps-input",
     "@sanity/color-input",
     "vercel-deploy",
-    "@sanity/dashboard",
-    "order-documents"
+    "@sanity/dashboard"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision", "parts-list"]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [
