@@ -11,7 +11,7 @@ Disallow: /admin/
 Sitemap: ${path.join(baseUrl || '', 'sitemap.xml')}
 `
 
-const trimWhitespaces = (xml: string): string => xml.replace(/\s+/gm, '')
+const trimWhitespaces = (xml: string): string => xml.replace(/>\s+</gm, '><')
 
 const getSitemapXml = (baseUrl: string) =>
   trimWhitespaces(`<?xml version="1.0" encoding="UTF-8"?>
