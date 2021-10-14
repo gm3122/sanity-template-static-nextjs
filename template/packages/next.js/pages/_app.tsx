@@ -4,12 +4,15 @@ import { useRouter } from 'next/router'
 import { getSiteSettings, getThemeSettings } from 'sanity'
 import SEO from 'core/SEO'
 import type { StaticPropsReturnType } from 'types/page'
+import createEmotionCache from 'utils/createEmotionCache'
 
-import CssBaseline from '@mui/material/CssBaseline'
+import { CacheProvider, EmotionCache } from '@emotion/react'
 
 import AllProviders from '~/providers/AllProviders'
 import Layout from '~/templates/Layout'
 import { getPaletteFromThemeSettings } from '~/theme'
+
+const clientSideEmotionCache = createEmotionCache()
 
 MyApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext)
@@ -28,8 +31,8 @@ type ExtraAppProps = Omit<StaticPropsReturnType<typeof MyApp.getInitialProps>, '
 const PageContext = createContext<ExtraAppProps>(undefined!)
 const HistoryContext = createContext<string[]>(undefined!)
 
-function MyApp(props: AppProps & ExtraAppProps) {
-  const { Component, pageProps, siteSettings, themeSettings, ...extra } = props
+function MyApp(props: AppProps & ExtraAppProps & { emotionCache: EmotionCache }) {
+  const { Component, pageProps, siteSettings, themeSettings, emotionCache = clientSideEmotionCache, ...extra } = props
   const [history, setHistory] = useState<string[]>([])
   const { asPath } = useRouter()
 
@@ -38,21 +41,22 @@ function MyApp(props: AppProps & ExtraAppProps) {
   }, [asPath, history])
 
   return (
-    <HistoryContext.Provider value={history}>
-      <SEO lang="fr" {...siteSettings} />
-      <AllProviders
-        themeOptions={{
-          palette: getPaletteFromThemeSettings(themeSettings),
-        }}
-      >
-        <CssBaseline />
-        <PageContext.Provider value={{ siteSettings, themeSettings, ...extra }}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </PageContext.Provider>
-      </AllProviders>
-    </HistoryContext.Provider>
+    <CacheProvider value={emotionCache}>
+      <HistoryContext.Provider value={history}>
+        <SEO lang="fr" {...siteSettings} />
+        <AllProviders
+          themeOptions={{
+            palette: getPaletteFromThemeSettings(themeSettings),
+          }}
+        >
+          <PageContext.Provider value={{ siteSettings, themeSettings, ...extra }}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </PageContext.Provider>
+        </AllProviders>
+      </HistoryContext.Provider>
+    </CacheProvider>
   )
 }
 

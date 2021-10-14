@@ -2,29 +2,42 @@ import { Children } from 'react'
 import type { DocumentContext } from 'next/document'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { Helmet, HelmetData } from 'react-helmet'
+import createEmotionCache from 'utils/createEmotionCache'
 
-import ServerStyleSheets from '@mui/styles/ServerStyleSheets'
+import createEmotionServer from '@emotion/server/create-instance'
 
 class MyDocument extends Document<{ helmet: HelmetData }> {
   static async getInitialProps(ctx: DocumentContext) {
-    const sheets = new ServerStyleSheets()
     const originalRenderPage = ctx.renderPage
+
+    const cache = createEmotionCache()
+    const { extractCriticalToChunks } = createEmotionServer(cache)
 
     ctx.renderPage = () =>
       originalRenderPage({
-        enhanceApp: (App) =>
+        enhanceApp: (App: any) =>
           // eslint-disable-next-line react/display-name
           function (props) {
-            return sheets.collect(<App {...props} />)
+            return <App emotionCache={cache} {...props} />
           },
       })
 
     const documentProps = await Document.getInitialProps(ctx)
 
+    const emotionStyles = extractCriticalToChunks(documentProps.html)
+    const emotionStyleTags = emotionStyles.styles.map((style) => (
+      <style
+        dangerouslySetInnerHTML={{ __html: style.css }}
+        data-emotion={`${style.key} ${style.ids.join(' ')}`}
+        // eslint-disable-next-line react/no-danger
+        key={style.key}
+      />
+    ))
+
     return {
       ...documentProps,
       helmet: Helmet.renderStatic(),
-      styles: [...Children.toArray(documentProps.styles), sheets.getStyleElement()],
+      styles: [...Children.toArray(documentProps.styles), ...emotionStyleTags],
     }
   }
 

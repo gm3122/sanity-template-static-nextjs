@@ -8,5 +8,5 @@ export const schemas = [siteSettings, themeSettings]
 
 export default createSchema({
   name: 'mySchema',
-  types: schemaTypes.concat([siteSettings, themeSettings]),
+  types: schemaTypes.concat(schemas),
 })
