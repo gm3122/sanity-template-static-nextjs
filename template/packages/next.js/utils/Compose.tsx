@@ -3,7 +3,7 @@ interface Props {
   components: Array<React.JSXElementConstructor<React.PropsWithChildren<any>>>
 }
 
-export default function Compose(props: Props) {
+function Compose(props: Props) {
   const { components = [], children } = props
 
   return (
@@ -14,3 +14,5 @@ export default function Compose(props: Props) {
     </>
   )
 }
+
+export default Compose

@@ -3,7 +3,7 @@
 const withTM = require('next-transpile-modules')(['sanity'])
 
 /**
- * @type {Partial<import('next/dist/server/config').NextConfig>}
+ * @type {import('type-fest').PartialDeep<import('next/dist/server/config').NextConfig>}
  **/
 const nextConfig = {
   distDir: '../../.next',
@@ -21,6 +21,10 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: process.env.NODE_ENV !== 'development',
+  },
+  images: {
+    domains: ['cdn.sanity.io'],
+    loader: 'custom',
   },
 }
 

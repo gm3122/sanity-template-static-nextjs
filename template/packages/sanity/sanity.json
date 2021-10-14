@@ -37,14 +37,6 @@
     {
       "implements": "part:@sanity/base/document-actions/resolver",
       "path": "./src/actions/resolve-document-actions.ts"
-    },
-    {
-      "implements": "part:@sanity/default-layout/branding-style",
-      "path": "./src/layout/Branding.css"
-    },
-    {
-      "implements": "part:@sanity/default-layout/tool-switcher",
-      "path": "./src/layout/ToolMenu.tsx"
     }
   ]
 }

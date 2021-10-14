@@ -1,6 +1,6 @@
-import { ThemeOptions, StyledEngineProvider } from '@mui/material/styles'
+import Compose from 'utils/Compose'
 
-import Compose from 'C/Compose'
+import { StyledEngineProvider, ThemeOptions } from '@mui/material/styles'
 
 import DialogProvider from './DialogProvider'
 import GlobalProvider from './GlobalProvider'

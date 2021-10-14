@@ -40,10 +40,20 @@ interface LinkProps {
   onClick?: () => void
   prefetch?: boolean
   scroll?: boolean
+  underline?: 'always' | 'hover' | 'none'
 }
 
 function Link(props: LinkProps) {
-  const { activeClassName = 'active', className: classNameProps, href, innerRef, naked, ...other } = props
+  const {
+    activeClassName = 'active',
+    className: classNameProps,
+    href,
+    innerRef,
+    naked,
+    scroll = false,
+    underline = 'none',
+    ...other
+  } = props
 
   const router = useRouter()
   const pathname = typeof href === 'string' ? href : href.pathname
@@ -55,7 +65,17 @@ function Link(props: LinkProps) {
     return <NextComposed className={className} href={href} ref={innerRef} {...other} />
   }
 
-  return <MuiLink className={className} component={NextComposed} href={pathname || '/'} ref={innerRef} {...other} />
+  return (
+    <MuiLink
+      className={className}
+      component={NextComposed}
+      href={pathname || '/'}
+      ref={innerRef}
+      scroll={scroll}
+      underline={underline}
+      {...other}
+    />
+  )
 }
 
 // eslint-disable-next-line react/display-name
