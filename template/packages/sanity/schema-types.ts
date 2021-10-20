@@ -37,6 +37,137 @@ export type {
 }
 
 /**
+ * Color
+ *
+ *
+ */
+export interface Color extends SanityDocument {
+  _type: 'color'
+
+  /**
+   * hex — `string`
+   *
+   *
+   */
+  hex: string
+
+  /**
+   * alpha — `number`
+   *
+   *
+   */
+  alpha: number
+
+  /**
+   * hsl — `object`
+   *
+   *
+   */
+  hslaColor: {
+    _type: 'hslaColor'
+    /**
+     * h — `number`
+     *
+     *
+     */
+    h: number
+
+    /**
+     * s — `number`
+     *
+     *
+     */
+    s: number
+
+    /**
+     * l — `number`
+     *
+     *
+     */
+    l: number
+
+    /**
+     * a — `number`
+     *
+     *
+     */
+    a: number
+  }
+
+  /**
+   * hsva — `object`
+   *
+   *
+   */
+  hsvaColor: {
+    _type: 'hsvaColor'
+    /**
+     * h — `number`
+     *
+     *
+     */
+    h: number
+
+    /**
+     * s — `number`
+     *
+     *
+     */
+    s: number
+
+    /**
+     * v — `number`
+     *
+     *
+     */
+    v: number
+
+    /**
+     * a — `number`
+     *
+     *
+     */
+    a: number
+  }
+
+  /**
+   * rgba — `object`
+   *
+   *
+   */
+  rgbaColor: {
+    _type: 'rgbaColor'
+    /**
+     * r — `number`
+     *
+     *
+     */
+    r: number
+
+    /**
+     * g — `number`
+     *
+     *
+     */
+    g: number
+
+    /**
+     * b — `number`
+     *
+     *
+     */
+    b: number
+
+    /**
+     * a — `number`
+     *
+     *
+     */
+    a: number
+  }
+}
+
+/**
  * Paramètres du site
  *
  *
@@ -148,11 +279,4 @@ export interface ThemeSettings extends SanityDocument {
   backdropColor: Color
 }
 
-export type Documents = SiteSettings | ThemeSettings
-
-/**
- * This interface is a stub. It was referenced in your sanity schema but
- * the definition was not actually found. Future versions of
- * sanity-codegen will let you type this explicity.
- */
-type Color = any
+export type Documents = Color | SiteSettings | ThemeSettings
