@@ -30,6 +30,7 @@ const NextComposed = forwardRef(function NextComposed(props: NextComposedProps, 
 // https://nextjs.org/docs/#with-link
 interface LinkProps {
   activeClassName?: string
+  'aria-label': string
   as?: Url
   children: React.ReactNode
   className?: string
@@ -40,20 +41,11 @@ interface LinkProps {
   onClick?: () => void
   prefetch?: boolean
   scroll?: boolean
-  underline?: 'always' | 'hover' | 'none'
+  underline?: 'always' | 'hover'
 }
 
 function Link(props: LinkProps) {
-  const {
-    activeClassName = 'active',
-    className: classNameProps,
-    href,
-    innerRef,
-    naked,
-    scroll = false,
-    underline = 'none',
-    ...other
-  } = props
+  const { activeClassName = 'active', className: classNameProps, href, innerRef, naked, ...other } = props
 
   const router = useRouter()
   const pathname = typeof href === 'string' ? href : href.pathname
@@ -71,8 +63,7 @@ function Link(props: LinkProps) {
       component={NextComposed}
       href={pathname || '/'}
       ref={innerRef}
-      scroll={scroll}
-      underline={underline}
+      underline="none"
       {...other}
     />
   )

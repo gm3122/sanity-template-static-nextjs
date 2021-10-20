@@ -8,5 +8,4 @@ export const getThemeSettings = (): Promise<ThemeSettings> => client.fetch('*[_i
 export { client }
 
 export * from './schema-types'
-
-export type {}
+export type { SanityImage } from './types/image'

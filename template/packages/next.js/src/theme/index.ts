@@ -1,5 +1,4 @@
 import { ThemeSettings } from 'sanity'
-import color from 'color'
 
 import { PaletteOptions, Theme, ThemeOptions } from '@mui/material/styles'
 
@@ -26,13 +25,14 @@ export const getThemeOptions = ({ palette }: Theme): ThemeOptions => ({
     MuiCssBaseline: {
       styleOverrides: {
         a: {
-          '&:hover': { textDecoration: 'none' },
-          color: palette.primary.main,
-          outline: 0,
           textDecoration: 'none',
         },
         body: {
           color: palette.primary.main,
+          fontFamily: 'proxima-nova, Arial, sans-serif',
+        },
+        img: {
+          userSelect: 'none',
         },
       },
     },
@@ -45,9 +45,9 @@ export const getThemeOptions = ({ palette }: Theme): ThemeOptions => ({
     },
     MuiLink: {
       styleOverrides: {
-        underlineHover: {
+        root: {
           '&:hover': {
-            textDecoration: 'none',
+            color: palette.secondary.main,
           },
         },
       },
@@ -56,10 +56,6 @@ export const getThemeOptions = ({ palette }: Theme): ThemeOptions => ({
 })
 
 export const getPaletteFromThemeSettings = (themeSettings: ThemeSettings): PaletteOptions => ({
-  background: {
-    default: themeSettings.backgroundColor.hex,
-    paper: color(themeSettings.backdropColor.hex).alpha(themeSettings.backdropColor.alpha).string(),
-  },
   primary: { main: themeSettings.primaryColor.hex },
   secondary: { main: themeSettings.secondaryColor.hex },
 })

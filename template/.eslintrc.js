@@ -97,6 +97,7 @@ module.exports = {
     // develop
     '@typescript-eslint/no-empty-interface': 'off',
     'no-empty-pattern': 'off',
+    'react/no-unescaped-entities': 'off',
   },
   overrides: [
     {
