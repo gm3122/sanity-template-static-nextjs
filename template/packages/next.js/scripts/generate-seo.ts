@@ -38,7 +38,7 @@ const getSitemapXml = (baseUrl: string) =>
 
   if (!baseUrl) {
     console.error('Please complete the field "siteUrl" in sanity document "siteSettings"')
-    process.exit(1)
+    process.exit()
   }
 
   const publicDir = path.join(__dirname, '../../../public')
