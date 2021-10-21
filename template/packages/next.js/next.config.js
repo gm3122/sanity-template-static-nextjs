@@ -6,7 +6,6 @@ const withTM = require('next-transpile-modules')(['sanity'])
  * @type {import('type-fest').PartialDeep<import('next/dist/server/config').NextConfig>}
  **/
 const nextConfig = {
-  distDir: '../../.next',
   async rewrites() {
     return [
       {

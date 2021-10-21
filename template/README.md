@@ -18,6 +18,7 @@ cp packages/next.js/.env.local packages/sanity/.env.development
 Change "Framework Preset" to Next.js under Settings / Build & Development Settings
 
 Override install command to "yarn install --production"
+Override output directory command to "packages/next.js/.next"
 
 ## Sanity
 

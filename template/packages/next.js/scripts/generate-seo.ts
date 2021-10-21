@@ -41,7 +41,7 @@ const getSitemapXml = (baseUrl: string) =>
     process.exit()
   }
 
-  const publicDir = path.join(__dirname, '../../../public')
+  const publicDir = path.join(__dirname, '../public')
   if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir)
 
   fs.writeFileSync(path.join(publicDir, 'robots.txt'), getRobotsTxt(baseUrl))

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "sanity build ../../public/admin -y",
+    "build": "sanity build ../next.js/public/admin -y",
     "codegen": "sanity-codegen",
     "dev": "watch 'yarn codegen' schemas",
     "start": "sanity start"
