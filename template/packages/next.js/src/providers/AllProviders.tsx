@@ -1,6 +1,6 @@
 import Compose from 'utils/Compose'
 
-import { StyledEngineProvider, ThemeOptions } from '@mui/material/styles'
+import { ThemeOptions } from '@mui/material/styles'
 
 import DialogProvider from './DialogProvider'
 import GlobalProvider from './GlobalProvider'
@@ -13,10 +13,8 @@ interface Props {
 
 export default function Providers({ children, themeOptions }: Props) {
   return (
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider themeOptions={themeOptions}>
-        <Compose components={[GlobalProvider, DialogProvider]}>{children}</Compose>
-      </ThemeProvider>
-    </StyledEngineProvider>
+    <ThemeProvider themeOptions={themeOptions}>
+      <Compose components={[GlobalProvider, DialogProvider]}>{children}</Compose>
+    </ThemeProvider>
   )
 }

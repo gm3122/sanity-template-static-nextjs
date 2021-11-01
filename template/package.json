@@ -32,6 +32,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
+    "@types/lodash": "^4.14.176",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "babel-jest": "^27.3.1",
@@ -60,9 +61,5 @@
     "ts-node": "^10.3.0",
     "type-fest": "^2.5.1",
     "vercel": "^23.1.2"
-  },
-  "engines": {
-    "node": "14.x",
-    "yarn": "1.18.x"
   }
 }

@@ -51,11 +51,18 @@ export function useNextSanityImage<L extends ImageProps['layout']>(
   } = {},
 ): any {
   const imageBuilder = options.imageBuilder || defaultImageBuilder
-  const { height, width, ...imageProps } = useImage(sanityClient, image, {
+  const {
+    height: originalHeight,
+    width: originalWidth,
+    ...imageProps
+  } = useImage(sanityClient, image, {
     ...options,
     imageBuilder,
   })
   const objectPosition = image.hotspot && `${image.hotspot?.x * 100}% ${image.hotspot?.y * 100}%`
+
+  const height = image.crop ? (1 - image.crop.top - image.crop.bottom) * originalHeight : originalHeight
+  const width = image.crop ? (1 - image.crop.right - image.crop.left) * originalWidth : originalWidth
 
   return {
     ...imageProps,
