@@ -8,7 +8,7 @@ const getRobotsTxt = (baseUrl: string) => `User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: ${path.join(baseUrl || '', 'sitemap.xml')}
+Sitemap: ${new URL('sitemap.xml', baseUrl || '').href}
 `
 
 const trimWhitespaces = (xml: string): string => xml.replace(/>\s+</gm, '><')
