@@ -9,17 +9,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/cache": "^11.5.0",
-    "@emotion/react": "^11.5.0",
+    "@emotion/cache": "^11.6.0",
+    "@emotion/react": "^11.6.0",
     "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "@mui/material": "^5.0.6",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.1.1",
     "@sanity/block-content-to-react": "^3.0.0",
     "clsx": "^1.1.1",
     "color": "^4.0.1",
     "lodash": "^4.17.21",
-    "next": "^12.0.2",
-    "next-sanity-image": "^3.1.7",
+    "next": "^12.0.4",
+    "next-sanity-image": "^3.1.8",
     "next-transpile-modules": "^9.0.0",
     "prop-types": "latest",
     "react": "^17.0.2",
@@ -32,7 +32,7 @@
     "@types/color": "^3.0.2",
     "@types/react-helmet": "^6.1.4",
     "child_process": "^1.0.2",
-    "eslint-config-next": "^12.0.2",
+    "eslint-config-next": "^12.0.4",
     "open": "^8.4.0",
     "path": "^0.12.7"
   }

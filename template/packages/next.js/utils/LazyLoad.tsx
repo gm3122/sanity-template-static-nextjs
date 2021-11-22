@@ -17,3 +17,13 @@ function LazyLoad(props: Props): JSX.Element | null {
 }
 
 export default LazyLoad
+
+export const withLazyLoad = <P,>(Component: React.ComponentType) =>
+  // eslint-disable-next-line react/display-name
+  function (props: P) {
+    return (
+      <LazyLoad>
+        <Component {...props} />
+      </LazyLoad>
+    )
+  }

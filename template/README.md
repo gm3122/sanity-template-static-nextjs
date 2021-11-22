@@ -27,6 +27,16 @@ Check Sanity CORS origins if you cannot login: <http://localhost:*> with credent
 [https://<#< repository.name >#>.vercel.app]
 [https://<#< repository.name >#>-*-gm3122.vercel.app] // wildcard not working atm
 
+```sh
+yarn workspace sanity sanity cors add https://<#< repository.name >#>.vercel.app --credentials
+```
+
+Export database
+
+```sh
+yarn workspace sanity sanity dataset export production
+```
+
 ## Vercel Deployments from Sanity
 
 Under <http://localhost:3000/admin/vercel-deploy>, set
