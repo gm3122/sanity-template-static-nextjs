@@ -28,6 +28,7 @@ Check Sanity CORS origins if you cannot login: <http://localhost:*> with credent
 [https://<#< repository.name >#>-*-gm3122.vercel.app] // wildcard not working atm
 
 ```sh
+yarn workspace sanity sanity cors add http://localhost:* --credentials --yes
 yarn workspace sanity sanity cors add https://<#< repository.name >#>.vercel.app --credentials
 ```
 
@@ -43,11 +44,11 @@ Under <http://localhost:3000/admin/vercel-deploy>, set
 
 Display Title: Production
 
-Vercel Project Name: next-js-static-starter-testing
+Vercel Project Name: <#< repository.name >#>
 
-Deploy Hook URL: (Settings / Git / Deploy Hooks) Title, branch
+Deploy Hook URL: (Vercel Settings / Git / Deploy Hooks) Title, branch
 
-Vercel Token: (Settings 'Global' / Token)
+Vercel Token: (Vercel Settings 'Global' / Token)
 
 ## (Optionnal) Deploy storybook on vercel
 

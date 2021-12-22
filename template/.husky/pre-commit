@@ -2,6 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn lint-staged
-yarn type-check
-yarn lint-fix
+yarn type:check
+yarn lint:fix
 yarn test

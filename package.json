@@ -2,10 +2,12 @@
   "name": "sanity-template-static-nextjs",
   "scripts": {
     "build": "yarn clean && sanity-template build --template-values dev/values.json",
-    "clean": "rm -rf template/.next template/yarn.lock",
-    "start": "cd build && yarn start",
+    "clean": "rm -rf template/.next template/yarn.lock build",
+    "start": "yarn copy-node_modules && cd build && yarn start",
     "update": "cd template && ncu -u --deep",
-    "watch": "yarn clean && sanity-template watch --template-values dev/values.json"
+    "watch": "yarn clean && sanity-template watch --template-values dev/values.json",
+    "postinstall": "cd template && yarn install && cd .. && yarn copy-node_modules",
+    "copy-node_modules": "rm -rf build/node_modules && cp ./template/node_modules ./build/node_modules"
   },
   "devDependencies": {
     "npm-check-updates": "^11.8.5",

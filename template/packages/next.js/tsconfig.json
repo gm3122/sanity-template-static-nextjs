@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": false,
+    "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["es6", "dom", "dom.iterable", "esnext"],
