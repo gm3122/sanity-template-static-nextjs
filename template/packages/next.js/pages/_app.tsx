@@ -2,8 +2,8 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import App, { AppContext, AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { getSiteSettings, getThemeSettings } from 'sanity'
-import SEO from 'core/SEO'
-import type { StaticPropsReturnType } from 'types/page'
+import DefaultSeo from 'core/DefaultSeo'
+import type { StaticReturnType } from 'types/page'
 import createEmotionCache from 'utils/createEmotionCache'
 
 import { CacheProvider, EmotionCache } from '@emotion/react'
@@ -26,7 +26,7 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   }
 }
 
-type ExtraAppProps = Omit<StaticPropsReturnType<typeof MyApp.getInitialProps>, 'pageProps'>
+type ExtraAppProps = Omit<StaticReturnType<typeof MyApp.getInitialProps>, 'pageProps'>
 
 const PageContext = createContext<ExtraAppProps>(undefined!)
 const HistoryContext = createContext<string[]>(undefined!)
@@ -43,7 +43,7 @@ function MyApp(props: AppProps & ExtraAppProps & { emotionCache: EmotionCache })
   return (
     <CacheProvider value={emotionCache}>
       <HistoryContext.Provider value={history}>
-        <SEO lang="fr" {...siteSettings} />
+        <DefaultSeo {...siteSettings} />
         <AllProviders
           themeOptions={{
             palette: getPaletteFromThemeSettings(themeSettings),

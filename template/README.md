@@ -12,7 +12,7 @@ Setup environment variable from Vercel
 
 ```sh
 vercel env pull packages/next.js/.env.local
-cp packages/next.js/.env.local packages/sanity/.env.development
+cp packages/next.js/.env packages/sanity/.env.development
 ```
 
 Change "Framework Preset" to Next.js under Settings / Build & Development Settings

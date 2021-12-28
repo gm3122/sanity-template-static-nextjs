@@ -100,8 +100,8 @@ tsconfig.tsbuildinfo
 .vercel
 
 # Env
-.env.local
-.env.development
+.env
+.env.*
 
 # Storybook
 storybook-static

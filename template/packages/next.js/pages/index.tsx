@@ -6,11 +6,11 @@ import Homepage from '#/Homepage'
 
 export const getStaticProps = async (_context: GetStaticPropsContext) => {
   return {
-    props: {},
+    props: {} as const,
   }
 }
 
-type PageContextProps = StaticPropsReturnType<typeof getStaticProps>['props']
+type PageContextProps = StaticPropsReturnType<typeof getStaticProps>
 
 const PageContext = createContext<PageContextProps>(undefined!)
 

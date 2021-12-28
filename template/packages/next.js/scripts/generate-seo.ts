@@ -1,5 +1,5 @@
 import { getSiteSettings } from 'sanity'
-import fs from 'fs'
+import fs from 'fs-extra'
 import path from 'path'
 
 const staticPages: string[] = []
@@ -42,9 +42,6 @@ const getSitemapXml = (baseUrl: string) =>
   }
 
   const publicDir = path.join(__dirname, '../public')
-  if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir)
-
-  fs.writeFileSync(path.join(publicDir, 'robots.txt'), getRobotsTxt(baseUrl))
-
-  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), getSitemapXml(baseUrl))
+  fs.outputFileSync(path.join(publicDir, 'robots.txt'), getRobotsTxt(baseUrl))
+  fs.outputFileSync(path.join(publicDir, 'sitemap.xml'), getSitemapXml(baseUrl))
 })()

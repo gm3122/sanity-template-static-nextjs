@@ -1,6 +1,7 @@
 // @ts-check
 
 const withTM = require('next-transpile-modules')(['sanity'])
+const withPWA = require('next-pwa')
 
 /**
  * @type {import('./types/partial').PartialReturnPromise<import('next/dist/server/config').NextConfig>}
@@ -27,6 +28,10 @@ const nextConfig = {
     domains: ['cdn.sanity.io'],
     loader: 'custom',
   },
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
+  },
 }
 
-module.exports = withTM(nextConfig)
+module.exports = withPWA(withTM(nextConfig))

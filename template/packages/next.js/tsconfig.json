@@ -22,6 +22,6 @@
     "skipLibCheck": true,
     "pretty": true
   },
-  "exclude": ["./node_modules", "./public", "./.cache"],
+  "exclude": ["./node_modules", "./public", "./.cache", "./scripts"],
   "include": ["**/*", ".eslintrc.js"]
 }
