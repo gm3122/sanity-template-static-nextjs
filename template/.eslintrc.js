@@ -1,4 +1,9 @@
-module.exports = {
+// @ts-check
+
+/**
+ * @type {import('eslint').Linter.Config}
+ **/
+const options = {
   env: {
     browser: true,
     es6: true,
@@ -9,8 +14,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:typescript-sort-keys/recommended',
-    'plugin:prettier/recommended',
     'plugin:jest/recommended',
+    'plugin:prettier/recommended', // keep last
   ],
   settings: {
     react: {
@@ -137,3 +142,5 @@ module.exports = {
     },
   ],
 }
+
+module.exports = options
