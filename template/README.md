@@ -11,7 +11,7 @@ vercel link
 Setup environment variable from Vercel
 
 ```sh
-vercel env pull packages/next.js/.env.local
+vercel env pull packages/next.js/.env
 cp packages/next.js/.env packages/sanity/.env.development
 ```
 
