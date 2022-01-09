@@ -1,4 +1,9 @@
-module.exports = {
+// @ts-check
+
+/**
+ * @type {import('@babel/core').TransformOptions}
+ */
+const config = {
   plugins: [
     '@babel/plugin-proposal-class-properties',
     [
@@ -29,3 +34,5 @@ module.exports = {
     '@babel/preset-typescript',
   ],
 }
+
+module.exports = config
